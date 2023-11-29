@@ -1,5 +1,5 @@
 {
-  "name": "xcall-cli",
+  "name": "xcall_cli",
   "version": "1.0.0",
   "description": "a cross chain application for the xcall network",
   "main": "dist/index.js",
