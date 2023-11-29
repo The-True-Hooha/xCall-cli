@@ -16,7 +16,7 @@
     "lint": "tsc"
   },
   "author": "David",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@types/figlet": "^1.5.8",
