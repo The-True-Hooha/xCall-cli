@@ -1,7 +1,7 @@
 import * as figlet from 'figlet';
 import { Command } from 'commander';
 
-console.log(figlet.textSync('hello world'));
+console.log(figlet.textSync('xCall-cli'));
 
 const cli = new Command();
 cli
