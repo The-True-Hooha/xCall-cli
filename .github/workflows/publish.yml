@@ -17,6 +17,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org
       - name: publish
-        run: npm publish --access public
+        run: npm publish --access public --registry=https://npm.pkg.github.com/
         env:
           XCALL: ${{secrets.XCALL}}

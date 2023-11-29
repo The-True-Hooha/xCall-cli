@@ -35,5 +35,3 @@ const options = cli.opts();
 if (!process.argv.slice(2).length) {
   cli.outputHelp();
 }
-
-
