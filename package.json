@@ -24,11 +24,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/The-True-Hooha/xCall-cli.git",
+    "url": "ssh://git@github.com/https:/The-True-Hooha/xCall-cli.git",
     "directory": "packages/xcall-validator"
   },
+  "bugs": {
+    "url": "https://github.com/The-True-Hooha/xCall-cli"
+  },
   "homepage": "https://github.com/The-True-Hooha/xCall-cli#README",
-  "author": "David",
+  "author": "David Ogar",
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
