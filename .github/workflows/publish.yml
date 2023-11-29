@@ -1,6 +1,9 @@
 name: "bundle and publish xcall cli to NPM"
 
-on: push
+on: 
+  push:
+    branches: 
+      - "main"
 
 jobs:
   publish:
