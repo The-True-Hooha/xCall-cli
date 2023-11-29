@@ -22,11 +22,6 @@
     "cross-chain",
     "web3"
   ],
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com/https:/The-True-Hooha/xCall-cli.git",
-    "directory": "packages/xcall-validator"
-  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "public"
