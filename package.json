@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "private": false,
   "bin": {
     "xcall-validator": "dist/index.js"
   },
@@ -27,7 +28,8 @@
     "directory": "packages/xcall-validator"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
   },
   "homepage": "https://github.com/The-True-Hooha/xCall-cli#README",
   "author": "David",
