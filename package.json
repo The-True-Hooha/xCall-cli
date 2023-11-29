@@ -1,5 +1,5 @@
 {
-  "name": "cross-chain-cli",
+  "name": "xcall_cli",
   "version": "1.0.0",
   "description": "a cross chain application for the xcall network",
   "main": "dist/index.js",
@@ -15,6 +15,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tsc"
   },
+  "keywords": [
+    "cli",
+    "xCall",
+    "cross-chain",
+    "web3"
+  ],
+  "repository": "https://github.com/The-True-Hooha/xCall-cli",
+  "homepage": "https://github.com/The-True-Hooha/xCall-cli#README",
   "author": "David",
   "license": "MIT",
   "devDependencies": {
