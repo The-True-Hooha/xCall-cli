@@ -11,11 +11,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: node
-        uses: actions/setup-node@v2
+      - name: setup node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org
+      - name: Authenticate with GitHub Packages
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.XCALL }}" > ~/.npmrc
       - name: publish
         run: npm publish --access public --registry=https://npm.pkg.github.com/
         env:
