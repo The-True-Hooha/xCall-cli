@@ -1,12 +1,12 @@
 {
-  "name": "xcall_cli",
+  "name": "xcall-validator",
   "version": "1.0.0",
   "description": "a cross chain application for the xcall network",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "bin": {
-    "xCall-cli": "dist/index.js"
+    "xcall-validator": "dist/index.js"
   },
   "scripts": {
     "dev": "npm run format && npm run build && node dist/index.js",
@@ -21,7 +21,14 @@
     "cross-chain",
     "web3"
   ],
-  "repository": "https://github.com/The-True-Hooha/xCall-cli",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/https:/The-True-Hooha/xCall-cli.git",
+    "directory": "packages/xcall_cli"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "homepage": "https://github.com/The-True-Hooha/xCall-cli#README",
   "author": "David",
   "license": "MIT",
