@@ -1,6 +1,6 @@
 {
   "name": "xcall-validator",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "a cross chain application for the xcall network",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
