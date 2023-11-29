@@ -1,0 +1,19 @@
+name: "bundle and publish xcall cli to NPM"
+
+on: push
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+      - name: publish
+        run: npm publish --access public
+        env:
+          XCALL: ${{secrets.XCALL}}
