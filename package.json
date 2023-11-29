@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/https:/The-True-Hooha/xCall-cli.git",
+    "url": "https://github.com/The-True-Hooha/xCall-cli.git",
     "directory": "packages/xcall-validator"
   },
   "homepage": "https://github.com/The-True-Hooha/xCall-cli#README",
