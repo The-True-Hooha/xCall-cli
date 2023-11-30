@@ -22,7 +22,7 @@ The Smart Contract Compatibility Checker CLI is a tool designed to validate smar
 
 ### Installation Steps
 
-1. can be installed from NPM with the command `npm install xCall-cli`
+1. can be installed from NPM with the command `npm i xcall-validator`
 
 ### Commands
 
