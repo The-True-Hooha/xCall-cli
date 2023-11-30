@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "commander": "^11.1.0",
-    "figlet": "^1.7.0"
+    "figlet": "^1.7.0",
+    "icon-sdk-js": "^1.5.2"
   }
 }
