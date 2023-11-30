@@ -29,6 +29,9 @@ cli
   .option(
     '-h, --help <value>, displays help information about the CLI and its available commands/options.',
   )
+  .option(
+    '-g, --generate <wallet>, generates a wallet address using the using icon-sdk-js',
+  )
   .parse(process.argv);
 
 const options = cli.opts();
