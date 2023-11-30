@@ -3,39 +3,35 @@ import fs from 'fs';
 import * as figlet from 'figlet';
 import { WalletDetail } from './interface/wallet.interface';
 import { customErrorHelper } from '../lib/error.helper';
+import { closeTerminal } from '../lib/close.terminal.helper';
 const { IconWallet } = IconService;
 
-const generateWallet = (): WalletDetail | void => {
-  figlet.text('Generating Wallet Address', (err, data) => {
-    if (err) {
-      console.error('cli error:', err);
-      return;
-    }
-    console.log(data);
-    // generate Wallet
-    const wallet = IconWallet.create();
-    const getWallet: WalletDetail = {
-      address: wallet.getAddress(),
-      privateKey: wallet.getPrivateKey(),
-      publicKey: wallet.getPublicKey(),
-    };
-    // Display Wallet Details
-
-    //   console.log(`your wallet address: ${getWallet.address}`);
-    //   console.log(`your wallet private Key: ${getWallet.privateKey}`);
-    //   console.log(`your wallet public Key: ${getWallet.publicKey}`);
-    //   console.log('please keep your keys safe')
-
-    const filePath = 'wallet-details.json';
-    fs.writeFileSync(filePath, JSON.stringify(getWallet, null, 2));
-    console.log(`generated wallet details and saved to ${filePath}`);
-    return getWallet;
+export const generateWallet = (): Promise<WalletDetail> => {
+  return new Promise((resolve, reject) => {
+    figlet.text('Generating Wallet Address', (err, data) => {
+      if (err) {
+        console.error('cli error:', err);
+        reject(err);
+      } else {
+        console.log(data);
+        // Generate Wallet
+        const wallet = IconWallet.create();
+        const getWallet: WalletDetail = {
+          address: wallet.getAddress(),
+          privateKey: wallet.getPrivateKey(),
+          publicKey: wallet.getPublicKey(),
+        };
+        const filePath = 'wallet-details.json';
+        fs.writeFileSync(filePath, JSON.stringify(getWallet, null, 2));
+        console.log(`Generated wallet details and saved to ${filePath}`);
+        resolve(getWallet);
+        closeTerminal()
+      }
+    });
   });
 };
 
-generateWallet();
-
-async function getEOAWallet(privatekey: string) {
+export async function getEOAWallet(privatekey: string){
   try {
     const getPrivateKey = IconWallet.loadPrivateKey(privatekey);
     const getWallet: WalletDetail = {
@@ -50,8 +46,9 @@ async function getEOAWallet(privatekey: string) {
     console.log('writing to file');
     fs.writeFileSync(filePath, JSON.stringify(getWallet, null, 2));
     fs.writeFileSync(objFilePath, JSON.stringify(keyStoreObj, null, 2));
+    console.log(`recovered eoa wallet details and keystore`);
+    closeTerminal()
   } catch (error: any) {
-    // write an error helper
-    return customErrorHelper(error);
+    console.log(customErrorHelper(error))
   }
 }

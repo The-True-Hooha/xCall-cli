@@ -1,5 +1,7 @@
+#! /usr/bin/env node
 import * as figlet from 'figlet';
 import { Command } from 'commander';
+import { generateWallet, getEOAWallet } from './icon/wallet';
 
 console.log(figlet.textSync('xCall-cli'));
 
@@ -35,6 +37,36 @@ cli
   .parse(process.argv);
 
 const options = cli.opts();
+if (options.generate === 'wallet') {
+  console.log('Are you sure you want to generate a new wallet (Y/N)');
+  process.stdin.once('data', (input) => {
+    const response = input.toString().trim();
+    if (response.toLowerCase() === 'y') {
+      console.log('generating new wallet data');
+      generateWallet();
+    } else {
+      console.log('wallet generation cancelled');
+    }
+  });
+}
+if(options.generate = 'eoa-wallet'){
+  console.log("Are you sure you want to recover an EOA? (Y/N)");
+  process.stdin.once("data", (input) => {
+    const confirmation = input.toString().trim();
+    if (confirmation.toLowerCase() === "y") {
+      console.log("Please enter the private key for EOA recovery:");
+
+      process.stdin.once("data", async (privateKeyInput) => {
+        const privateKey = privateKeyInput.toString().trim();
+        await getEOAWallet(privateKey);
+      });
+    } else {
+      console.log("EOA recovery canceled.");
+    }
+  });
+}else{
+  console.log("Invalid command. Use '-g eoa-wallet' to recover an EOA.");
+}
 if (!process.argv.slice(2).length) {
   cli.outputHelp();
 }
