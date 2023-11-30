@@ -26,11 +26,13 @@ The Smart Contract Compatibility Checker CLI is a tool designed to validate smar
 
 ### Commands
 
-- validate `<contract-file>`: Validates a smart contract against supported chains.
+- v: `<contract-file>`: Validates a smart contract against supported chains.
 
-- check `<contract-file>`: Checks compatibility for a smart contract against specified chains.
+- c:`<contract-file>`: Checks compatibility for a smart contract against specified chains.
 
-- list-chains: Lists all supported blockchain networks.
+- l: `<Lists>` all supported blockchain networks.
+
+- g: `<generate>` a wallet account
 
 ### Options
 
@@ -43,3 +45,5 @@ The Smart Contract Compatibility Checker CLI is a tool designed to validate smar
 - --verbose or -v: Enable verbose mode for detailed information.
 
 - --ignore-warnings or -i: Skip warnings during validation.
+- --wallet: generate a new wallet containing public and private keys
+- --eoa-wallet: generate wallet from a private key

@@ -34,9 +34,14 @@ cli
   .option(
     '-g, --generate <wallet>, generates a wallet address using the using icon-sdk-js',
   )
+  .option(
+    '-r, --recover <wallet>, generates a wallet address using the using icon-sdk-js',
+  )
   .parse(process.argv);
 
 const options = cli.opts();
+// Your imports and other code...
+
 if (options.generate === 'wallet') {
   console.log('Are you sure you want to generate a new wallet (Y/N)');
   process.stdin.once('data', (input) => {
@@ -48,25 +53,24 @@ if (options.generate === 'wallet') {
       console.log('wallet generation cancelled');
     }
   });
-}
-if(options.generate = 'eoa-wallet'){
-  console.log("Are you sure you want to recover an EOA? (Y/N)");
-  process.stdin.once("data", (input) => {
+} else if (options.recover === 'wallet') {
+  console.log('Are you sure you want to recover an EOA? (Y/N)');
+  process.stdin.once('data', (input) => {
     const confirmation = input.toString().trim();
-    if (confirmation.toLowerCase() === "y") {
-      console.log("Please enter the private key for EOA recovery:");
-
-      process.stdin.once("data", async (privateKeyInput) => {
+    if (confirmation.toLowerCase() === 'y') {
+      console.log('Please enter the private key for EOA recovery:');
+      process.stdin.once('data', async (privateKeyInput) => {
         const privateKey = privateKeyInput.toString().trim();
         await getEOAWallet(privateKey);
       });
     } else {
-      console.log("EOA recovery canceled.");
+      console.log('EOA recovery canceled.');
     }
   });
-}else{
-  console.log("Invalid command. Use '-g eoa-wallet' to recover an EOA.");
+} else {
+  console.log("Invalid command. Use '-r wallet' to recover an EOA.");
 }
+
 if (!process.argv.slice(2).length) {
   cli.outputHelp();
 }
