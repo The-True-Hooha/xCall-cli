@@ -1,5 +1,7 @@
 # Smart Contract Compatibility Checker CLI
 
+## PS THIS IS STILL ACTIVELY IN DEVELOPMENT SO YOU MIGHT ENCOUNTER A FEW BUGS
+
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Overview
