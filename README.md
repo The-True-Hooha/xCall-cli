@@ -1,8 +1,10 @@
 # Smart Contract Compatibility Checker CLI
 
-## PS THIS IS STILL ACTIVELY IN DEVELOPMENT SO YOU MIGHT ENCOUNTER A FEW BUGS
+## PS: THIS IS STILL ACTIVELY IN DEVELOPMENT SO YOU MIGHT ENCOUNTER A FEW BUGS
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+NOTE: The best way to run this project to is clone and run locally
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![npm](https://img.shields.io/badge/npm-package-blue.svg)](https://www.npmjs.com/package/xcall-validator)
 
 ## Overview
 
